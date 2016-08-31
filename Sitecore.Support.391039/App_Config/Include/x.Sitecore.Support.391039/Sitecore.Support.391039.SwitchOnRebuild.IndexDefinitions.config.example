@@ -1,0 +1,26 @@
+﻿<!--
+  The configuration file can be used as a boilerplate to re-configure indexes with specific index IDs to 
+  use SwitchOnRebuild index implementation
+
+  'rebuildCore' parameter is required and defines the name of additional Solr core. 
+  The SwitchOnRebuild index implementation alternates between cores ( when one is being rebuilt the other 
+    is being used for search operations)
+	
+  In this particular example the value for the setting is '$(id)_alternate' ( for example 
+    ,for 'sitecore_web_index' the alternate core will be set to 'sitecore_web_index_alternate').
+	The value can be setting to something else ( as long as core with such name exists on Solr server)
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <contentSearch>
+      <configuration>
+        <indexes>
+          <index id="sitecore_web_index">
+            <patch:attribute name="type">Sitecore.Support.ContentSearch.SolrProvider.SwitchOnRebuildSolrSearchIndex, Sitecore.Support.391039</patch:attribute>
+            <param desc="rebuildCore" patch:after="param[@desc='core']">$(id)_alternate</param>
+          </index>
+        </indexes>
+      </configuration>
+    </contentSearch>
+  </sitecore>
+</configuration>

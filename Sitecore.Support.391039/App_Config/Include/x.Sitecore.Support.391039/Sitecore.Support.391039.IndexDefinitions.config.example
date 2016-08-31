@@ -1,0 +1,20 @@
+﻿<!--
+  The configuration file can be used as a boilerplate to re-configure indexes with specific index IDs to 
+  use simple Solr index implementation.
+  
+  In case SwitchOnRebuild index implementation is intended to be used - use the 
+    SwitchOnRebuild.IndexDefinitions.config.example config file
+-->
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <contentSearch>
+      <configuration>
+        <indexes>
+          <index id="sitecore_web_index">
+            <patch:attribute name="type">Sitecore.Support.ContentSearch.SolrProvider.SolrSearchIndex, Sitecore.Support.391039</patch:attribute>
+          </index>
+        </indexes>
+      </configuration>
+    </contentSearch>
+  </sitecore>
+</configuration>
