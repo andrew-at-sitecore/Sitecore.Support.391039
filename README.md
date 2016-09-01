@@ -25,7 +25,9 @@ and replace them with
 Sitecore Patch includes the following files:
 
 1. `\bin\Sitecore.Support.391039.dll`
-2. `\App_Config\Include\Sitecore.Support.391039.config`
+2. `\App_Config\Include\x.Sitecore.Support.391039\Sitecore.Support.391039.config` - definitions for SolrStatusMonitor component
+3. `\App_Config\Include\x.Sitecore.Support.391039\Sitecore.Support.391039.IndexDefinitions.config.example` - template configuration file to configure Solr indexes 
+4. `\App_Config\Include\x.Sitecore.Support.391039\Sitecore.Support.391039.SwitchOnRebuild.IndexDefinitions.config.example` - template configuration file to configure SwitchOnRebuild Solr indexes 
 
 ## License
 
